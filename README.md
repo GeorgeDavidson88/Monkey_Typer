@@ -27,5 +27,7 @@ You can adjust the delay to make typing slower or faster.
 delay = 0 # the delay between each letter typed
 ```
 Type 'start' in the terminal to start typing.
+
 Type 'quit' to exit the program.
+
 Monkey Type has a bot detection system, so don't blame me when your account gets banned.

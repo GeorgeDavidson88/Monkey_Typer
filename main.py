@@ -4,16 +4,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver import ActionChains
 from selenium import webdriver
 
-PATH = "C:\Program Files (x86)\chromedriver.exe" # the location of your driver
+PATH = "C:\Program Files (x86)\chromedriver.exe"  # the location of your driver
 
 service = Service(executable_path=PATH)
 driver = webdriver.Chrome(service=service)
 
-driver.get("https://monkeytype.com") # getting the website
+driver.get("https://monkeytype.com")  # getting the website
 
-driver.implicitly_wait(30) # waiting for the website to be fully loaded
-
-delay = 0
+driver.implicitly_wait(30)  # waiting for the website to be fully loaded
 
 
 def letter_by_letter(delay):
@@ -34,7 +32,7 @@ while True:
     if command == "start":
         if len(driver.find_element(By.ID, "words").text) != 0:
             print("Started Program...")
-            letter_by_letter(delay)
+            letter_by_letter(0)
         else:
             print("Failed to start.")
 
