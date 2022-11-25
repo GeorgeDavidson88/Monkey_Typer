@@ -4,7 +4,6 @@ This web crawler will automaticaly type on https://monkeytype.com.
 <img src="README.assets\monkey_type.png">
 
 # Instructions
-
 ### Driver
 The web crawler depends on the Selenium Python library, which requires a browser driver. I used Google Chrome, so I will need a Chrome driver. You can find the latest Chrome drivers [here]( https://chromedriver.chromium.org). Note that the driver and browser versions must be the same.
 
@@ -15,7 +14,6 @@ PATH = "C:\Program Files (x86)\chromedriver.exe" # the location of your driver
 service = Service(executable_path=PATH)
 driver = webdriver.Chrome(service=service)
 ```
-
 ### Installation
 Make sure you have Selenium installed.
 ```python
