@@ -1,8 +1,9 @@
 import time
+
+from selenium import webdriver
+from selenium.webdriver import ActionChains
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
-from selenium.webdriver import ActionChains
-from selenium import webdriver
 
 PATH = "C:\Program Files (x86)\chromedriver.exe"  # the location of your driver
 
@@ -15,9 +16,17 @@ driver.implicitly_wait(30)  # waiting for the website to be fully loaded
 
 
 def letter_by_letter(delay):
-    while len(driver.find_element(By.ID, "words").find_element(By.CLASS_NAME, "word").text) != 0:
-        word = [letter for letter in driver.find_element(
-            By.CSS_SELECTOR, ".word.active").text] + [" "]
+    while (
+        len(
+            driver.find_element(By.ID, "words").find_element(
+                By.CLASS_NAME, "word").text
+        )
+        != 0
+    ):
+        word = [
+            letter
+            for letter in driver.find_element(By.CSS_SELECTOR, ".word.active").text
+        ] + [" "]
 
         for letter in word:
             ActionChains(driver).send_keys(letter).perform()
@@ -44,4 +53,5 @@ while True:
 
     else:
         print(
-            f"'{command}' is not recognized. Type 'start' to start typing or 'quit' to quit the program.")
+            f"'{command}' is not recognized. Type 'start' to start typing or 'quit' to quit the program."
+        )
