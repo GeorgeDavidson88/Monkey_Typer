@@ -2,7 +2,7 @@
 
 This web crawler will automaticaly type on <https://monkeytype.com>.
 
-![Monkey-Type-Website](README.assets/monkey_type.png)
+![monkey_type_website.png](README.assets/monkey_type_website.png)
 
 ## Instructions
 
