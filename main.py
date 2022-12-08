@@ -16,17 +16,9 @@ driver.implicitly_wait(30)  # waiting for the website to be fully loaded
 
 
 def letter_by_letter(delay):
-    while (
-        len(
-            driver.find_element(By.ID, "words").find_element(
-                By.CLASS_NAME, "word").text
-        )
-        != 0
-    ):
-        word = [
-            letter
-            for letter in driver.find_element(By.CSS_SELECTOR, ".word.active").text
-        ] + [" "]
+    while (len(driver.find_element(By.ID, "words").find_element(By.CLASS_NAME, "word").text) != 0):
+        word = [letter for letter in driver.find_element(
+            By.CSS_SELECTOR, ".word.active").text] + [" "]
 
         for letter in word:
             ActionChains(driver).send_keys(letter).perform()
@@ -55,3 +47,5 @@ while True:
         print(
             f"'{command}' is not recognized. Type 'start' to start typing or 'quit' to quit the program."
         )
+
+print("Done")
