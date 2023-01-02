@@ -58,9 +58,9 @@ class Main:
                 break
 
             elif command == "help":
-                print("""'start' to start typing.
-'stop' to stop typing.
-'quit' to quit the program.""")
+                print("""'start' - Start Typing.
+'stop' - Stop Typing.
+'quit' - Quit Program.""")
             else:
                 print(
                     f"'{command}' is not recognized. Type 'help' to see commands.")
