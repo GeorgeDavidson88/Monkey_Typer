@@ -11,7 +11,7 @@ from selenium.webdriver.common.by import By
 PATH = os.path.join("driver", "chromedriver.exe")
 
 service = Service(executable_path=PATH)
-driver = webdriver.Chrome(service=service)
+driver = webdriver.Chrome()
 
 driver.get("https://monkeytype.com")  # Gets the website.
 driver.implicitly_wait(30)  # Waiting for the website to fully load.
