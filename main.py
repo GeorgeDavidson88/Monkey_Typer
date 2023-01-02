@@ -1,18 +1,21 @@
 import time
+import threading
 
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 
-PATH = "C:\Program Files (x86)\chromedriver.exe"  # the location of your driver
+# The location of your driver.
+PATH = "C:\Program Files (x86)\chromedriver.exe"
 
 service = Service(executable_path=PATH)
 driver = webdriver.Chrome(service=service)
 
-driver.get("https://monkeytype.com")  # getting the website
+driver.get("https://monkeytype.com")  # Gets the website.
+driver.implicitly_wait(30)  # Waiting for the website to fully load.
 
-driver.implicitly_wait(30)  # waiting for the website to be fully loaded
+delay = 0.01  # The time between each letter typed.
 
 
 def letter_by_letter(delay):
@@ -21,6 +24,7 @@ def letter_by_letter(delay):
             By.CSS_SELECTOR, ".word.active").text] + [" "]
 
         for letter in word:
+            # Sends the letter to the browser.
             ActionChains(driver).send_keys(letter).perform()
             time.sleep(delay)
 
@@ -33,7 +37,7 @@ while True:
     if command == "start":
         if len(driver.find_element(By.ID, "words").text) != 0:
             print("Started Program...")
-            letter_by_letter(0)
+            letter_by_letter(delay)
         else:
             print("Failed to start.")
 
