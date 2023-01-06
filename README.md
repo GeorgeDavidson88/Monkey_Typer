@@ -1,4 +1,4 @@
-# Monkey Typer
+# Monkey-Typer
 
 This web crawler will automaticaly type on <https://monkeytype.com>.
 
